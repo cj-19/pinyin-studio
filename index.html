@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinyin Studio · Installation</title>
+  <meta name="description" content="Installer Pinyin Studio : sous-titres pinyin, doublage mandarin, dictionnaire et quiz espacés.">
+  <link rel="icon" href="assets/logo.png">
+  <style>
+    :root {
+      --bg: #fbf8f2; --card: #ffffff; --ink: #1f1d1a; --muted: #6d6860; --line: #ebe4d8;
+      --accent: #c8102e; --accent-ink: #ffffff; --gold: #b07d12; --soft: #fbeeee;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #16141a; --card: #1f1d24; --ink: #f1ede6; --muted: #a49e95; --line: #34313a;
+        --accent: #e0424f; --gold: #e0b14a; --soft: #2a1d22; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 "Segoe UI", Roboto, Arial, sans-serif; }
+    main { max-width: 860px; margin: 0 auto; padding: 0 16px 64px; }
+    header.hero { text-align: center; padding: 40px 0 24px; }
+    header.hero img { width: 84px; height: 84px; border-radius: 18px; }
+    h1 { font-size: 34px; margin: 12px 0 6px; }
+    .tag { color: var(--muted); font-size: 18px; margin: 0 auto 20px; max-width: 620px; }
+    .badge { display: inline-block; background: var(--soft); color: var(--accent); border-radius: 99px; padding: 4px 12px; font-weight: 600; font-size: 14px; }
+    .btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    a.btn { display: inline-block; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; border: 1px solid var(--line); color: var(--ink); background: var(--card); }
+    a.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    nav.toc { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 8px 0 28px; }
+    nav.toc a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); }
+    nav.toc a:hover { color: var(--ink); border-color: var(--accent); }
+    section.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; margin: 18px 0; }
+    h2 { font-size: 22px; margin: 0 0 6px; }
+    h2 .n { display: inline-flex; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
+      align-items: center; justify-content: center; font-size: 15px; margin-right: 8px; vertical-align: 2px; }
+    .lead { color: var(--muted); margin: 0 0 12px; }
+    ol li, ul li { margin: 6px 0; }
+    code { background: var(--soft); padding: 1px 6px; border-radius: 5px; font-size: 14px; }
+    .note { background: var(--soft); border-radius: 10px; padding: 10px 14px; font-size: 15px; margin-top: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
+    figure { margin: 0; }
+    .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+    .shots img { width: 100%; border-radius: 12px; border: 1px solid var(--line); display: block; }
+    figcaption { color: var(--muted); font-size: 14px; text-align: center; margin-top: 6px; }
+    footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 36px; }
+    footer a { color: var(--muted); }
+    a { color: var(--accent); }
+    @media (max-width: 640px) { h1 { font-size: 28px; } .shots { grid-template-columns: 1fr; } section.card { padding: 18px 16px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <img src="assets/logo.png" alt="Logo Pinyin Studio">
+    <h1>Pinyin Studio</h1>
+    <p class="tag">Apprenez le mandarin avec les vidéos que vous aimez : pinyin sous les sous-titres, doublage, dictionnaire
+      personnel et quiz au bon moment.</p>
+    <span class="badge">L'IA est incluse : rien à configurer</span>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/cj-19/pinyin-studio/releases/download/v1.0.0/pinyin-studio-1.0.0.zip">⬇ Télécharger l'extension (zip)</a>
+      <a class="btn" href="#edge">Installer sur Edge</a>
+    </div>
+    <div class="shots">
+      <figure><img src="assets/video.png" alt="Sous-titres chinois avec le pinyin au-dessus et la traduction en dessous"><figcaption>Le pinyin sur vos vidéos</figcaption></figure>
+      <figure><img src="assets/tableau-de-bord.png" alt="Tableau de bord de Pinyin Studio"><figcaption>Le tableau de bord</figcaption></figure>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Sommaire">
+    <a href="#edge">Edge</a><a href="#autres">Chrome, Brave, Opera…</a><a href="#ia">L'IA</a><a href="#premiers-pas">Premiers pas</a><a href="#depannage">Dépannage</a>
+  </nav>
+
+  <section class="card" id="edge">
+    <h2><span class="n">1</span>Sur Microsoft Edge (recommandé)</h2>
+    <p class="lead">Edge est déjà installé sur Windows, et c'est le navigateur qui a les meilleures voix chinoises pour le doublage.</p>
+    <ol>
+      <li>Ouvrez Microsoft Edge et allez sur la page de Pinyin Studio dans la boutique Edge Add-ons :
+        <strong>lien bientôt disponible</strong> (l'extension est en cours de vérification chez Microsoft).</li>
+      <li>Cliquez sur <strong>Obtenir</strong>, puis sur <strong>Ajouter l'extension</strong>. Aucun compte n'est nécessaire.</li>
+      <li>Cliquez sur l'icône puzzle en haut à droite, puis sur l'œil à côté de Pinyin Studio pour l'épingler.</li>
+      <li>Le tableau de bord s'ouvre tout seul : c'est prêt.</li>
+    </ol>
+    <p class="note">En attendant la boutique, la méthode ci-dessous marche aussi dans Edge (adresse <code>edge://extensions</code>).</p>
+  </section>
+
+  <section class="card" id="autres">
+    <h2><span class="n">2</span>Sur Chrome, Brave, Opera, Vivaldi</h2>
+    <p class="lead">On charge l'extension à la main, en mode développeur : c'est sans risque, et ça prend 3 minutes.</p>
+    <ol>
+      <li><a href="https://github.com/cj-19/pinyin-studio/releases/download/v1.0.0/pinyin-studio-1.0.0.zip">Téléchargez pinyin-studio-1.0.0.zip</a>.</li>
+      <li>Clic droit sur le fichier → <strong>Extraire tout…</strong> → <strong>Extraire</strong>. Rangez le dossier obtenu dans
+        Documents : ne le supprimez pas, le navigateur en a besoin.</li>
+      <li>Tapez cette adresse dans la barre du navigateur :
+        <ul>
+          <li>Chrome : <code>chrome://extensions</code></li>
+          <li>Edge : <code>edge://extensions</code></li>
+          <li>Brave : <code>brave://extensions</code></li>
+          <li>Opera : <code>opera://extensions</code></li>
+          <li>Vivaldi : <code>vivaldi://extensions</code></li>
+        </ul></li>
+      <li>Activez <strong>Mode développeur</strong> (interrupteur en haut à droite ; à gauche sur Edge et Opera).</li>
+      <li>Cliquez sur <strong>Charger l'extension non empaquetée</strong> et choisissez le dossier extrait (celui qui contient <code>manifest.json</code>).</li>
+      <li>Épinglez l'icône via le puzzle en haut à droite, et c'est prêt.</li>
+    </ol>
+    <p class="note">Au redémarrage, Chrome peut afficher « Désactiver les extensions en mode développeur » : cliquez sur la croix pour
+      garder l'extension. Firefox et Safari ne sont pas pris en charge pour l'instant.</p>
+  </section>
+
+  <section class="card" id="ia">
+    <h2><span class="n">3</span>L'IA : rien à configurer</h2>
+    <p class="lead">La correction des phrases et la vérification des mots fonctionnent dès l'installation.</p>
+    <p>Si un message indique que le service est saturé, réessayez une minute plus tard. Pour ne dépendre de personne, vous
+      pouvez aussi mettre votre propre clé Gemini gratuite :</p>
+    <ol>
+      <li>Ouvrez <a href="https://aistudio.google.com">aistudio.google.com</a> et connectez-vous avec un compte Google.</li>
+      <li>Cliquez sur <strong>Get API key</strong>, puis <strong>Create API key</strong>, et copiez la clé (elle commence par « AIza »).</li>
+      <li>Dans Pinyin Studio : <strong>Tableau de bord → Réglages → IA</strong>, choisissez <strong>Ma propre clé Google Gemini</strong>,
+        collez-la, puis <strong>Tester l'IA</strong>.</li>
+    </ol>
+    <p class="note">N'écrivez pas d'informations personnelles dans les quiz : le texte est envoyé à Google pour la correction.</p>
+  </section>
+
+  <section class="card" id="premiers-pas">
+    <h2><span class="n">4</span>Premiers pas (5 minutes)</h2>
+    <ol>
+      <li><strong>Ajouter un mot</strong> : icône Pinyin Studio → onglet <strong>Ajouter</strong>. Tapez le pinyin (une barre propose
+        les 4 tons : clic ou touches 1 à 4, « v » = ü), puis le sens que vous pensez, et <strong>Vérifier et ajouter</strong>.</li>
+      <li><strong>Faire un quiz</strong> : onglet <strong>Réviser</strong> → <strong>Faire un quiz maintenant</strong>. Ensuite, les quiz
+        s'ouvrent tout seuls quand un mot est sur le point d'être oublié (toutes les 3 minutes en mode actif, 15 en mode occupé).</li>
+      <li><strong>Regarder une vidéo</strong> : ouvrez une vidéo YouTube qui a des sous-titres. Le pinyin s'affiche au-dessus des
+        caractères, la traduction en dessous ; cliquez sur un mot pour l'ajouter à votre dictionnaire.</li>
+      <li><strong>Tout retrouver</strong> : le lien <strong>Tableau de bord ↗</strong> en bas de la popup ouvre le vocabulaire, les
+        tournures, le carnet d'erreurs, la grande révision et les réglages.</li>
+    </ol>
+  </section>
+
+  <section class="card" id="depannage">
+    <h2><span class="n">5</span>Dépannage</h2>
+    <table>
+      <thead><tr><th>Problème</th><th>Solution</th></tr></thead>
+      <tbody>
+        <tr><td>« Beaucoup de demandes » ou « service indisponible »</td><td>Réessayez une minute plus tard, ou mettez votre propre clé Gemini (étape 3).</td></tr>
+        <tr><td>Aucun sous-titre sur une vidéo</td><td>La vidéo n'a pas de sous-titres, ou YouTube ne propose pas leur traduction. Essayez une vidéo avec l'icône <strong>CC</strong>.</td></tr>
+        <tr><td>Pas de voix pour le doublage</td><td>Windows : Paramètres → Heure et langue → Voix → Ajouter des voix → <strong>Chinois (simplifié)</strong>, puis redémarrez le navigateur. Sur Edge, choisissez une voix « Natural » dans l'onglet Vidéos.</td></tr>
+        <tr><td>Les quiz ne s'ouvrent pas</td><td>Vérifiez que les quiz ne sont pas en pause et que le navigateur est ouvert. Aucun quiz ne s'ouvre si aucun mot n'est à réviser.</td></tr>
+        <tr><td>Sous-titres ou quiz en double</td><td>Une ancienne version est encore active : désactivez-la dans la page des extensions.</td></tr>
+        <tr><td>L'extension a disparu (mode développeur)</td><td>Le dossier extrait a été déplacé ou supprimé : remettez-le en place et rechargez l'extension.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <a href="privacy.html">Politique de confidentialité</a> ·
+    <a href="https://github.com/cj-19/pinyin-studio/issues">Signaler un problème</a> ·
+    <a href="https://github.com/cj-19/pinyin-studio">Code sur GitHub</a>
+  </footer>
+</main>
+</body>
+</html>
