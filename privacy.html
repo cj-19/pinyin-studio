@@ -36,11 +36,14 @@
 
   <h2>Données envoyées à des services tiers</h2>
   <ul>
-    <li><strong>Google Gemini</strong> (ou <strong>Anthropic Claude</strong>, si vous choisissez ce fournisseur) : quand vous
-      ajoutez un mot ou répondez à un quiz, le texte nécessaire (le mot, le sens que vous proposez, votre phrase) est envoyé
-      avec votre propre clé d'API pour obtenir la correction. Ces échanges sont soumis aux conditions du fournisseur choisi ;
-      sur l'offre gratuite de Gemini, Google peut les utiliser pour améliorer ses modèles. N'y écrivez pas d'informations
-      personnelles.</li>
+    <li><strong>Correction par l'IA</strong> : quand vous ajoutez un mot ou répondez à un quiz, le texte nécessaire (le mot,
+      le sens que vous proposez, votre phrase) est envoyé pour obtenir la correction. Par défaut, il passe par le
+      <strong>relais Pinyin Studio</strong> (hébergé chez Cloudflare), qui le transmet à <strong>Google Gemini</strong> et
+      renvoie la réponse : le relais ne conserve pas ce texte, il reçoit seulement un identifiant d'installation anonyme
+      (tiré au hasard) pour limiter le nombre de demandes. Si vous mettez votre propre clé (Gemini ou
+      <strong>Anthropic Claude</strong>), le texte est envoyé directement à ce fournisseur. Ces échanges sont soumis aux
+      conditions de Google ou d'Anthropic ; sur l'offre gratuite de Gemini, Google peut les utiliser pour améliorer ses
+      modèles. N'y écrivez pas d'informations personnelles.</li>
     <li><strong>YouTube</strong> : sur les vidéos que vous regardez, l'extension lit les sous-titres proposés par YouTube
       (et leur traduction automatique) pour afficher le pinyin et lire le doublage. Rien n'est envoyé ailleurs.</li>
   </ul>
@@ -52,7 +55,8 @@
     <li><strong>notifications</strong> : vous prévenir qu'un quiz ou une grande révision est disponible.</li>
     <li><strong>contextMenus</strong> : ajouter au dictionnaire un mot sélectionné dans une page.</li>
     <li><strong>Accès à youtube.com</strong> : afficher les sous-titres pinyin et le doublage sur les vidéos.</li>
-    <li><strong>Accès à generativelanguage.googleapis.com et api.anthropic.com</strong> : obtenir les corrections de l'IA.</li>
+    <li><strong>Accès à pinyin-studio-relay.pinyin-studio-relay.workers.dev</strong> (le relais),
+      <strong>generativelanguage.googleapis.com et api.anthropic.com</strong> : obtenir les corrections de l'IA.</li>
   </ul>
 
   <h2>Contact</h2>
@@ -66,9 +70,11 @@
   <p>Pinyin Studio collects no data for its author: no account, no server, no analytics, no ads. Your dictionary, mistakes,
     review history and settings (including your own AI API key, if you enter one) are stored locally in the extension's
     storage and are deleted when you uninstall it.</p>
-  <p>When you add a word or answer a quiz, the necessary text (the word, the meaning you suggest, your sentence) is sent with
-    your own API key to Google Gemini (or Anthropic Claude, if you choose it) to get feedback; these exchanges are governed by
-    that provider's terms, and on Gemini's free tier Google may use them to improve its models. On YouTube videos you watch,
+  <p>When you add a word or answer a quiz, the necessary text (the word, the meaning you suggest, your sentence) is sent to
+    get feedback: by default through the Pinyin Studio relay (hosted on Cloudflare), which forwards it to Google Gemini and
+    does not store it, receiving only a random anonymous install ID used for rate limiting; or, if you enter your own key,
+    directly to Google Gemini or Anthropic Claude. These exchanges are governed by that provider's terms, and on Gemini's free
+    tier Google may use them to improve its models. On YouTube videos you watch,
     the extension reads the subtitles provided by YouTube to display pinyin and the dubbing; nothing is sent elsewhere.</p>
   <p>Contact: open an issue at
     <a href="https://github.com/cj-19/pinyin-studio/issues">github.com/cj-19/pinyin-studio/issues</a>.</p>
